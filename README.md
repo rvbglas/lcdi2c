@@ -1,6 +1,8 @@
 Linux kernel module for alphanumeric LCDs on HD44780 and I2C expander attached. 
 Module supports LCDs with PCF8574 based expanders attached.
 
+Default donfiguration and makefile adapted for OpenWRT/LEDE.
+
 The module requires kernel version 3.x or higher, access to I2C bus on destination machine 
 (module was tested on RaspberryPI 2 with kernel 4.1 and i2c_bcm2708 already loaded). 
 It is currently able to drive only one LCD at once, however you have a choice which LCD

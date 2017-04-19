@@ -3,7 +3,7 @@
 #define CRIT_BEG(d, error) if(down_interruptible(&d->sem)) return -error
 #define CRIT_END(d) up(&d->sem)
 
-static uint busno = 1;      //I2C Bus number
+static uint busno = 0;      //I2C Bus number
 static uint address = DEFAULT_CHIP_ADDRESS; //Device address
 static uint topo = LCD_DEFAULT_ORGANIZATION;
 static uint cursor = 1;
@@ -44,7 +44,7 @@ module_param(blink, uint, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
 module_param(topo, uint, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
 module_param(major, int, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP);
 
-MODULE_PARM_DESC(busno, " I2C Bus number, default 1");
+MODULE_PARM_DESC(busno, " I2C Bus number, default 0");
 MODULE_PARM_DESC(address, " LCD I2C Address, default 0x27");
 MODULE_PARM_DESC(pinout, " I2C module pinout configuration, eight "
                          "numbers\n\t\trepresenting following LCD module"
